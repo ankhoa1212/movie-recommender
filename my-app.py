@@ -4,7 +4,7 @@ import random
 from sklearn.neighbors import NearestNeighbors
 
 # TODO use entire dataset once testing is complete
-targets = ['title.basics_100.tsv', 'title.ratings_100.tsv']
+targets = ['title.basics_1000.tsv', 'title.ratings_1000.tsv']
 search_title = ''
 user_ratings = []
 recommendations = []
