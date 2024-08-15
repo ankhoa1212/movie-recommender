@@ -64,5 +64,6 @@ with col2:
             st.write(f'"{search_title}" not found. Try checking for spelling or search for a different title.')
             search_title = ''
         else:
-            get_recommendations(i)
+            with col1:
+                get_recommendations(i)
         
