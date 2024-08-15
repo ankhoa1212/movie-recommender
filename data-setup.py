@@ -4,9 +4,12 @@ import gzip
 import pandas as pd
 from bs4 import BeautifulSoup
 
-# beautifulsoup4 
+# the beautifulsoup4 library should be installed before running this script
 
+# URL to check for the dataset link
 DATASET_URL = 'https://datasets.imdbws.com/'
+
+# target dataset link to download
 TARGET = 'title.basics.tsv.gz'
 
 if not os.path.isfile(TARGET[:TARGET.rfind('.')]):
@@ -38,6 +41,7 @@ df['isAdult'] = df['isAdult'].replace(['1'],True)
 print(f'saving {TARGET} as file...')
 # save tsv file
 df.to_csv(TARGET[:TARGET.rfind('.')], sep='\t', index=False)
+# TODO remove this section when testing is complete
 df.head(100).to_csv(TARGET[:TARGET.rfind('.')] + "_100", sep='\t', index=False)
 df.head(1000).to_csv(TARGET[:TARGET.rfind('.')] + "_1000", sep='\t', index=False)
 df.head(10000).to_csv(TARGET[:TARGET.rfind('.')] + "_10000", sep='\t', index=False)
